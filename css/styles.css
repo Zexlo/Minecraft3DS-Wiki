@@ -1,4 +1,13 @@
 
+
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+
 /* scrolling background*/
 .container {
   overflow: hidden;
@@ -18,21 +27,13 @@
   100% {
     transform: translate3d(-1920px, 0, 0); /* The image width */
   }
-}
-
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #9a2121;
-  color: #fff;
+} 
 }
 
 header {
   display: flex;
   align-items: center;
-  background-color: #52e02a;
+  background-color: #1e1e1e;
   padding: 1rem;
   border-bottom: 2px solid #444;
 }
@@ -92,3 +93,4 @@ header {
 summary {
   font-size: x-large;
 }
+
