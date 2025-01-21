@@ -3,23 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editing Audio</title>
+  <title>Dumping Assets</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
-    <h1>Editing Audio</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="changing-loot-tables.html">Changing Loot Tables</a></li>
-        <li><a href="importing-new-mob-textures.html">Importing New Mob Textures</a></li>
-      </ul>
-    </nav>
+    <a href="../index.html" class="home-icon">
+      <img src="../assets/images/home.png" alt="Home">
+    </a>
+    <div class="header-content">
+      <h1>Minecraft 3DS Wiki</h1>
+      <p>Your knowledge hub for modding Minecraft: New Nintendo 3DS Edition!</p>
+    </div>
   </header>
   <main>
-    <h2>How to Edit Audio Files</h2>
-    <p>Learn how to replace in-game sounds with custom audio.</p>
+    <h1>How to Dump and Extract Minecraft: N3DS Edition Assets</h1>
+    <h2>Prerequisites</h2>
+    <p>
+      Your console needs to have custom firmware (CFW) installed. If you do not have it, please go to 
+      <a href="https://3ds.hacks.guide" target="_blank">https://3ds.hacks.guide</a> and follow the guide for installing it there.
+    </p>
+    <p>
+      Make sure the latest version of GodMode9 is installed, it can be downloaded here: 
+      <a href="https://github.com/d0k3/GodMode9/releases/tag/v2.1.1" target="_blank">GodMode9 v2.1.1</a>.
+    </p>
+    <p>
+      To open it, make sure the console is powered off, then press the Start button to load the Luma Chain Loader menu. Select GodMode9 to launch it.
+    </p>
+    <p>
+      If you want to dump your cartridge, make sure it is inside of the system.
+    </p>
+
+    <h2>Dumping</h2>
+    <p>
+      Dumping the base game (1.0) is not necessary but should be done just in case. Its RomFS is not referenced much when modding, but if you want to do things like make custom music, for example, then you will have to dump it.
+    </p>
+    <p>
+      You will need to dump the game's update (1.9) to do anything for modding, as most things will apply to the update.
+    </p>
+
+    <h3>Dumping the Cartridge (1.0)</h3>
+    <ol>
+      <li>Open GodMode9</li>
+      <li>Navigate to <code>[C:] GAMECART</code></li>
+      <li>Press A on <code>[TitleID].trim.3ds</code></li>
+      <li>Select “Copy to 0:/gm9/out”</li>
+    </ol>
+
+    <h3>Dumping the Base Game (1.0)</h3>
+    <ol>
+      <li>Open GodMode9</li>
+      <li>Navigate to <code>[A:] SYSNAND SD</code></li>
+      <li>Select "title"</li>
+      <li>Press the Right Shoulder button and A</li>
+      <li>Select "Search for titles"</li>
+      <li>Select <code>[TitleID] Minecraft: New Nintendo 3DS Edition (KTR-BD3E-</code></li>
+    </ol>
+
+    <h3>Dumping the Update (1.9)</h3>
+    <p>Follow the same steps as for the base game but locate the update title instead.</p>
   </main>
 </body>
 </html>
