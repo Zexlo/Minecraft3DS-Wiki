@@ -12,6 +12,7 @@ header {
   align-items: center;
   background-color: #1e1e1e;
   padding: 1rem;
+  border-bottom: 2px solid #444;
 }
 
 .home-icon img {
@@ -67,4 +68,3 @@ header {
   transform: scale(1.05); /* Grow card on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
-
