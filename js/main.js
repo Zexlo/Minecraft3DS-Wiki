@@ -37,6 +37,21 @@ document.querySelectorAll('details').forEach((detail) => {
   });
 });
 
+document.querySelectorAll('.card').forEach((card) => {
+  card.addEventListener('mouseenter', () => {
+    // Apply hover animation styles to the entire card
+    card.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
+    card.style.transform = 'scale(1.05)';
+    card.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+  });
+
+  card.addEventListener('mouseleave', () => {
+    // Reset styles when the mouse leaves the card
+    card.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
+    card.style.transform = 'scale(1)';
+    card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+  });
+});
 
 // Disable right-click
 document.addEventListener('contextmenu', function (e) {
