@@ -1,3 +1,26 @@
+To update this page to match the design in `index.html`:
+
+### Delete:
+```html
+<header>
+  <img src="../assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki Logo" class="wiki-logo">
+</header>
+```
+
+### Add:
+```html
+<header>
+  <img src="../assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki Logo" class="wiki-logo">
+</header>
+<main>
+```
+
+### Fix the Closing Tag:
+Add the closing `</main>` tag at the end of the content, just before `</body>`.
+
+### Final Version:
+Here’s the updated HTML:
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +31,9 @@
 </head>
 <body>
   <header>
-  <img src="../assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki Logo" class="wiki-logo">
+    <img src="../assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki Logo" class="wiki-logo">
   </header>
+  <main>
     <h2>Multiple Game Instances</h2>
     <ul>
       <li>If you have multiple versions of Minecraft from either other regions or a Game-Cart with a digital copy, these will interfere with Mods being loaded.</li>
@@ -66,3 +90,4 @@
   </main>
 </body>
 </html>
+```
