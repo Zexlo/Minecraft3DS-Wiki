@@ -12,6 +12,7 @@
       <a href="index.html">
         <img src="assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki" class="wiki-logo">
       </a>
+      <img src="assets/images/gear.png" alt="Settings" class="settings-icon" id="settingsIcon">
     </div>
   </header>
   <main class="grid-container">
@@ -40,6 +41,19 @@
       <p>Learn how to troubleshoot and fix your mods.</p>
     </a>
   </main>
+
+  <!-- Settings Menu Modal -->
+  <div class="settings-modal" id="settingsModal">
+    <div class="settings-menu">
+      <h2>Settings</h2>
+      <label>
+        <input type="checkbox" id="themeToggle">
+        Toggle Dark/Light Mode
+      </label>
+      <button id="closeSettings">Close</button>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
