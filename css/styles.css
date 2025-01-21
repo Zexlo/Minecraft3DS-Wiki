@@ -1,4 +1,4 @@
-//* General styles */
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -34,33 +34,32 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Background blur effect */
-  backdrop-filter: blur(5px); /* Apply blur effect */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.settings-menu {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Default background */
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
+.settings-modal.blur {
+  backdrop-filter: blur(5px);
+}
+
+.settings-menu {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease-out;
+  z-index: 100;
+  width: 300px;
+}
+
 .settings-menu.open {
   transform: scale(1) translate(-50%, -50%);
 }
 
-.settings-modal.blur {
-  backdrop-filter: blur(5px);
-  
 input[type="checkbox"] {
   margin: 0.5rem;
 }
@@ -93,11 +92,6 @@ body.light-mode {
 }
 
 /* Light mode styles */
-body.light-mode {
-  background-color: #fff;
-  color: #000;
-}
-
 body.light-mode .card {
   background-color: #f4f4f4; /* Lighter background for light mode */
   color: #000; /* Black text for light mode */
