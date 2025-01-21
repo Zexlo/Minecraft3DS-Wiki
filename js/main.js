@@ -6,13 +6,32 @@ document.addEventListener('DOMContentLoaded', () => {
 const settingsIcon = document.getElementById('settingsIcon');
 const settingsModal = document.getElementById('settingsModal');
 const closeSettingsButton = document.getElementById('closeSettings');
+const blurToggle = document.getElementById('blurToggle');
+const themeToggle = document.getElementById('themeToggle');
 
 settingsIcon.addEventListener('click', () => {
   settingsModal.style.display = 'flex'; // Show settings modal
+  if(!blurToggle.checked) {
+    settingsModal.classList.remove('blur');
+  } else {
+    settingsModal.classList.add('blur');
+  }
 });
 
 closeSettingsButton.addEventListener('click', () => {
   settingsModal.style.display = 'none'; // Hide settings modal
+});
+
+blurToggle.addEventListener('change', function() {
+  if(this.checked) {
+    settingsModal.classList.add('blur');
+  } else {
+    settingsModal.classList.remove('blur');
+  }
+});
+
+themeToggle.addEventListener('change', function() {
+  document.body.classList.toggle('light-mode', this.checked);
 });
 
 // Card Hover Effect (JavaScript)
