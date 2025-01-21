@@ -7,27 +7,6 @@ body {
   margin: 0;
   padding: 0;
   color: #fff;
-
-/* scrolling background*/
-.container {
-  overflow: hidden;
-}
-
-.infinite-scrolling {
-  background: url("assets/images/blueprintscroll.png") repeat-x;
-  height: 645px;
-  width: 5760px; /* The image width times 3 */
-  animation: slide 60s linear infinite;
-}
-
-@keyframes slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-1920px, 0, 0); /* The image width */
-  }
-} 
 }
 
 header {
@@ -94,3 +73,23 @@ summary {
   font-size: x-large;
 }
 
+/* scrolling background*/
+.container {
+  overflow: hidden;
+}
+
+.infinite-scrolling {
+  background: url("assets/images/blueprintscroll.png") repeat-x;
+  height: 645px;
+  width: 5760px; /* The image width times 3 */
+  animation: slide 60s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1920px, 0, 0); /* The image width */
+  }
+} 
