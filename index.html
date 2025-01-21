@@ -4,12 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minecraft 3DS Wiki</title>
-  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Card Styles */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background-color: #f4f4f4;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 250px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: black;
+    }
+    .card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .card h3 {
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
   <header>
     <a href="index.html" class="home-icon">
-      <img src="./assets/images/home.png" alt="Home">
+      <img src="assets/images/home.png" alt="Home">
     </a>
     <div class="header-content">
       <h1>Minecraft 3DS Wiki</h1>
@@ -17,17 +45,29 @@
     </div>
   </header>
   <main>
-    <h1>Welcome to the Minecraft 3DS Wiki!</h1>
-    <div class="cards">
-      <a href="./pages/texture-packs.html" class="card">How to Create Texture Packs</a>
-      <a href="./pages/custom-skins.html" class="card">How to Create Custom Skins</a>
-      <a href="./pages/modding-bjson.html" class="card">Modding `*.bjson` Files</a>
-      <a href="./pages/dumping-assets.html" class="card">Dump and Extract Game Assets</a>
-      <a href="./pages/modifying-audio.html" class="card">Modifying Game Audio</a>
-      <a href="./pages/add-to-unistore.html" class="card">Add Content to the UniStore</a>
-      <a href="./pages/mods-not-working.html" class="card">Mods Not Working (Fixes)</a>
+    <div class="card-container">
+      <a href="pages/texture-packs.html" class="card">
+        <h3>How to Create Texture Packs</h3>
+      </a>
+      <a href="pages/custom-skins.html" class="card">
+        <h3>How to Create Custom Skins</h3>
+      </a>
+      <a href="pages/modding-bjson.html" class="card">
+        <h3>Modding *.bjson Files</h3>
+      </a>
+      <a href="pages/dumping-game-files.html" class="card">
+        <h3>How to Dump Game Files</h3>
+      </a>
+      <a href="pages/modifying-audio.html" class="card">
+        <h3>How to Modify Game Audio</h3>
+      </a>
+      <a href="pages/unistore.html" class="card">
+        <h3>How to Add Content to the UniStore</h3>
+      </a>
+      <a href="pages/mods-not-working.html" class="card">
+        <h3>Mods Not Working (Fixes)</h3>
+      </a>
     </div>
   </main>
 </body>
 </html>
-
