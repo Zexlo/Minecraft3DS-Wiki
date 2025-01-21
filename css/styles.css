@@ -1,75 +1,94 @@
-
-
-
-/* General Styles */
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #121212;
   color: #fff;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  background-color: #1e1e1e;
   padding: 1rem;
-  border-bottom: 2px solid #444;
+  background-color: #1e1e1e;
 }
 
 .wiki-logo {
-  max-width: 300px;
-  height: auto;
+  max-width: 200px;
 }
 
-.home-icon img {
-  width: 50px;
-  height: 50px;
-  margin-right: 1rem;
+.settings-icon {
+  width: 50px;  /* Increased size */
+  height: 50px; /* Increased size */
+  cursor: pointer;
 }
 
-.header-content h1 {
-  font-size: 2.5rem;
-  margin: 0;
+/* Settings Menu Modal */
+.settings-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Background blur effect */
+  backdrop-filter: blur(5px); /* Apply blur effect */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.header-content p {
-  font-size: 1rem;
-  margin: 0.5rem 0 0;
+.settings-menu {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease-out;
+  z-index: 100;
+  width: 300px;
 }
 
-/* Grid Layout */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
+.settings-menu.open {
+  transform: scale(1) translate(-50%, -50%);
+}
+
+input[type="checkbox"] {
+  margin: 0.5rem;
+}
+
+/* Light mode styles */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000;
 }
 
 /* Card Styles */
 .card {
-  background-color: #222;
-  border: 1px solid #444;
+  display: block;
+  background-color: #fff;
+  padding: 20px;
   border-radius: 8px;
-  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
   text-decoration: none;
   color: inherit;
+  margin-bottom: 20px; /* Ensure spacing between cards */
 }
 
-.card h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.5rem;
+/* Additional Grid Layout for Cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-.card p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #bbb;
-}
-
-summary {
-  font-size: x-large;
+/* Disable right-click and text selection */
+body {
+  user-select: none;
 }
