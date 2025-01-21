@@ -1,36 +1,63 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #121212;
+  color: #fff;
 }
 
 header {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
   text-align: center;
+  padding: 2rem 1rem;
+  background-color: #1e1e1e;
 }
 
 header h1 {
+  font-size: 2.5rem;
   margin: 0;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+header p {
+  font-size: 1rem;
+  margin: 0.5rem 0 0;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-main {
   padding: 2rem;
-  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Card Styles */
+.card {
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
