@@ -3,23 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editing Audio</title>
+  <title>Modding *.bjson Files</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
-    <h1>Editing Audio</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="changing-loot-tables.html">Changing Loot Tables</a></li>
-        <li><a href="importing-new-mob-textures.html">Importing New Mob Textures</a></li>
-      </ul>
-    </nav>
+    <a href="../index.html" class="home-icon">
+      <img src="../assets/images/home.png" alt="Home">
+    </a>
+    <div class="header-content">
+      <h1>Minecraft 3DS Wiki</h1>
+      <p>Your knowledge hub for modding Minecraft: New Nintendo 3DS Edition!</p>
+    </div>
   </header>
   <main>
-    <h2>How to Edit Audio Files</h2>
-    <p>Learn how to replace in-game sounds with custom audio.</p>
+    <h1>Modding *.bjson Files</h1>
+    <p>
+      <code>*.bjson</code> Files contain a lot about the game, including how fonts, textures, and models are rendered and displayed. In today's guide, we will go over two ways to mod/edit these files, one of which is extremely experimental but much easier than traditional means.
+    </p>
+
+    <h2>Manually Editing the File</h2>
+    <ul>
+      <li>Before reading this section, please read up about it in <code>&lt;#1235023744280563792&gt;</code>. It has free documentation on the file format itself and how it operates compared to traditional <code>*.json</code> files.</li>
+      <li>You will need a hex editor like <code>ImHex</code> or <code>HxD</code> (my personal favorite).</li>
+      <li>Since there is a lot of stuff to understand and yet to be learned from this format, we highly recommend STBrian/STBUniverse's <a href="https://github.com/STBrian/MC3DS-BJSON-Editor/releases/latest" target="_blank">MC3DS-BJSON-Editor</a>.</li>
+    </ul>
+
+    <h2>Using *.bjson Editor</h2>
+    <ol>
+      <li>Download the *.bjson Editor from the link here: <a href="https://github.com/STBrian/MC3DS-BJSON-Editor/releases/latest" target="_blank">*.bjson Editor</a>.</li>
+      <li>Windows Defender might say the file is a Trojan/Virus. It isn't malware and is fully open-source.</li>
+      <li>After dealing with Windows Defender, start the application up and navigate to: <code>File > Open</code> in the context menu, and load your <code>*.bjson</code> file.</li>
+      <li>If you're looking to modify geometry, you'll need to look for "Cube, Pivot, and Rotation" objects, and also texture width and heights.</li>
+    </ol>
   </main>
 </body>
 </html>
