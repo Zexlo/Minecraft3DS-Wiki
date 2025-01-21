@@ -5,52 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minecraft 3DS Wiki</title>
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    /* Card Styles */
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .card {
-      background-color: #d3d3d3; /* Gray background */
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-decoration: none;
-      color: black;
-    }
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-    .card h3 {
-      margin: 10px 0;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-    }
-    .home-icon img {
-      width: 40px;
-      height: 40px;
-      margin-right: 15px;
-    }
-    .header-content h1 {
-      font-size: 24px;
-      margin: 0;
-    }
-    .header-content p {
-      font-size: 14px;
-      margin: 0;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -59,33 +13,35 @@
     </a>
     <div class="header-content">
       <h1>Minecraft 3DS Wiki</h1>
-      <p>Your knowledge hub for modding Minecraft: New Nintendo 3DS Edition!</p>
+      <p>Your knowledge hub for modding Minecraft 3DS Edition!</p>
     </div>
   </header>
-  <main>
-    <div class="card-container">
-      <a href="pages/texture-packs.html" class="card">
-        <h3>How to Create Texture Packs</h3>
-      </a>
-      <a href="pages/custom-skins.html" class="card">
-        <h3>How to Create Custom Skins</h3>
-      </a>
-      <a href="pages/modding-bjson.html" class="card">
-        <h3>Modding *.bjson Files</h3>
-      </a>
-      <a href="pages/dumping-game-files.html" class="card">
-        <h3>How to Dump Game Files</h3>
-      </a>
-      <a href="pages/modifying-audio.html" class="card">
-        <h3>How to Modify Game Audio</h3>
-      </a>
-      <a href="pages/unistore.html" class="card">
-        <h3>How to Add Content to the UniStore</h3>
-      </a>
-      <a href="pages/mods-not-working.html" class="card">
-        <h3>Mods Not Working (Fixes)</h3>
-      </a>
-    </div>
+  <main class="grid-container">
+    <a href="sections/editing-audio.html" class="card">
+      <h2>Editing Audio</h2>
+      <p>Learn how to replace or edit in-game audio files.</p>
+    </a>
+    <a href="sections/changing-loot-tables.html" class="card">
+      <h2>Changing Loot Tables</h2>
+      <p>Customize loot drops with JSON files.</p>
+    </a>
+    <a href="sections/importing-new-mob-textures.html" class="card">
+      <h2>Importing New Mob Textures</h2>
+      <p>Create and apply custom textures to mobs.</p>
+    </a>
+    <a href="sections/entities.html" class="card">
+      <h2>Entities</h2>
+      <p>Learn about entity structure and troubleshooting.</p>
+    </a>
+    <a href="sections/blocks.html" class="card">
+      <h2>Blocks</h2>
+      <p>Explore custom block creation and capabilities.</p>
+    </a>
+    <a href="sections/commands.html" class="card">
+      <h2>Commands</h2>
+      <p>Master command blocks and functions for advanced gameplay.</p>
+    </a>
   </main>
 </body>
 </html>
+
