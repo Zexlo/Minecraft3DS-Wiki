@@ -6,35 +6,47 @@ document.addEventListener('DOMContentLoaded', () => {
 const settingsIcon = document.getElementById('settingsIcon');
 const settingsModal = document.getElementById('settingsModal');
 const closeSettingsButton = document.getElementById('closeSettings');
-const blurToggle = document.getElementById('blurToggle');
 const themeToggle = document.getElementById('themeToggle');
 
 settingsIcon.addEventListener('click', () => {
   settingsModal.style.display = 'flex'; // Show settings modal
-  if(!blurToggle.checked) {
-    settingsModal.classList.remove('blur');
-  } else {
-    settingsModal.classList.add('blur');
-  }
 });
 
 closeSettingsButton.addEventListener('click', () => {
   settingsModal.style.display = 'none'; // Hide settings modal
 });
 
-blurToggle.addEventListener('change', function() {
-  if(this.checked) {
-    settingsModal.classList.add('blur');
-  } else {
-    settingsModal.classList.remove('blur');
-  }
-});
-
 themeToggle.addEventListener('change', function() {
   document.body.classList.toggle('light-mode', this.checked);
 });
 
-// Card Hover Effect (JavaScript)
+// Existing code for card interaction and other features remains unchanged
+document.querySelectorAll('details').forEach((detail) => {
+  const contents = detail.querySelectorAll(':not(summary)');
+  
+  detail.addEventListener('toggle', () => {
+    contents.forEach((content) => {
+      if (detail.open) {
+        content.style.opacity = '0';
+        content.style.transform = 'translateY(-25px)';
+        content.getBoundingClientRect();
+        content.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        content.style.opacity = '1';
+        content.style.transform = 'translateY(0)';
+      } else {
+        content.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        content.style.opacity = '0';
+        content.style.transform = 'translateY(-25px)';
+        setTimeout(() => {
+          content.style.transition = '';
+          content.style.opacity = '';
+          content.style.transform = ''; 
+        }, 410);
+      }
+    });
+  });
+});
+
 document.querySelectorAll('.card').forEach((card) => {
   card.addEventListener('mouseenter', () => {
     card.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
