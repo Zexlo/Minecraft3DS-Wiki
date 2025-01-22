@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minecraft 3DS Wiki</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<header>
+
+<template id="header">
+
+    <div class="header">    
+    <header>
     <div class="header-content">
       <a href="index.html">
         <img src="assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki" class="wiki-logo">
@@ -16,6 +13,9 @@
       <img src="assets/images/gear.png" alt="Settings" class="settings-icon" id="settingsIcon">
     </div>
   </header>
+</div>
+</template>
+
 
    <!-- Settings Menu Modal -->
    <div class="settings-modal" id="settingsModal">
@@ -38,5 +38,3 @@
   </div>
 
   <script src="js/main.js"></script>
-</body>
-</html>  

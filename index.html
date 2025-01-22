@@ -8,7 +8,14 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <iframe src="header.html"></iframe>
+  <script>
+    // Get the template element
+    let template = document.getElementById("header");
+    // Clone the template content
+    let clone = template.content.cloneNode(true);
+    // Insert the clone into the document body
+    document.body.appendChild(clone);
+    </script>  
   <div class="container">
     <div class="infinite-scrolling">
     </div>    
