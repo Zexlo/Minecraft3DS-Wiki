@@ -11,12 +11,18 @@ body {
 
 body.dark-mode {
   background-color: #000000; /* Darker background for dark mode */
+  color: #fff; /* Ensure text color is visible in dark mode */
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000; /* Dark text for light mode */
 }
 
 header {
   display: flex;
   align-items: center;
-  background-color: #1e1e1e;
+  background-color: #1e1e1e; /* Default dark color */
   padding: 1rem;
   border-bottom: 2px solid #444;
   transition: background-color 0.3s ease; /* Transition for smooth color change */
@@ -65,12 +71,6 @@ header {
   width: 400px; /* Increase width */
   max-height: 80vh; /* Ensure it doesn't take up too much vertical space */
   overflow-y: auto; /* Add scroll if content exceeds max-height */
-}
-
-/* Light mode styles */
-body.light-mode {
-  background-color: #ffffff;
-  color: #000;
 }
 
 body.no-bg {
