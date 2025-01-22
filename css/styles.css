@@ -5,9 +5,7 @@ body {
   padding: 0;
   color: #fff;
 
-  background: url("assets/images/blueprintscroll.png");  
-=======
-  transition: background-color 0.3s, color 0.3s;
+  background: url("assets/images/blueprintscroll.png"); 
 
 }
 
