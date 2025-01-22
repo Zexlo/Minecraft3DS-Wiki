@@ -5,21 +5,22 @@ body {
   padding: 0;
   color: #fff;
   text-align: center;
-  background: url("assets/images/blueprintscroll.png"); 
   transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode {
-  background-color: #000000; /* Darker background for dark mode */
+  background: url("assets/images/BGdark.png");   
+/*background-color: #000000; /* Darker background for dark mode */
   color: #fff; /* Ensure text color is visible in dark mode */
 }
 
 body.light-mode {
-  background-color: #ffffff;
+  background: url("assets/images/BG.png");   
+/*   background-color: #ffffff; */
   color: #000; /* Dark text for light mode */
 }
 
-header {
+header.dark-mode {
   display: flex;
   align-items: center;
   background-color: #1e1e1e; /* Default dark color */
@@ -28,16 +29,32 @@ header {
   transition: background-color 0.3s ease; /* Transition for smooth color change */
 }
 
+header.light-mode {
+  display: flex;
+  align-items: center;
+  background-color: #fff; /* Default dark color */
+  padding: 1rem;
+  border-bottom: 2px solid #444;
+  transition: background-color 0.3s ease; /* Transition for smooth color change */
+}
+
 .wiki-logo {
   max-width: 300px;
   height: auto;
+  margin-left: 600px 
 }
 
 .settings-icon {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  margin-left: auto; /* Push to the right side */
+  margin-left: 550px; /* Push to the right side */
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+
+  /* Safari seems to support, but seems deprecated and does the same thing as the others. */
+  image-rendering: -webkit-optimize-contrast;  
 }
 
 /* Settings Menu Modal */
@@ -73,10 +90,6 @@ header {
   overflow-y: auto; /* Add scroll if content exceeds max-height */
 }
 
-body.no-bg {
-  background: none; /* Disable background image */
-}
-
 /* Grid Layout */
 .grid-container {
   display: grid;
@@ -88,7 +101,7 @@ body.no-bg {
 
 /* Card Styles */
 .card {
-  background-color: #222;
+  background-color: #444;
   border: 1px solid #444;
   border-radius: 8px;
   padding: 1rem;
