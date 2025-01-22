@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to set theme preference in localStorage
   const setThemePreference = (isLight) => {
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    document.body.classList.toggle('dark-mode', !isLight); // Add dark mode class
   };
 
   // Function to get background image preference from localStorage
@@ -21,13 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('bgImage', useImage ? 'true' : 'false');
   };
 
+  // Function to get background blur preference from localStorage
+  const getBlurPreference = () => {
+    return localStorage.getItem('blur') === 'true' ? true : false;
+  };
+
+  // Function to set background blur preference in localStorage
+  const setBlurPreference = (useBlur) => {
+    localStorage.setItem('blur', useBlur ? 'true' : 'false');
+  };
+
   // Apply theme and background settings
   const applySettings = () => {
     const themeToggle = document.getElementById('themeToggle');
     const bgImageToggle = document.getElementById('bgImageToggle');
-    
+    const blurToggle = document.getElementById('blurToggle');
+    const settingsModal = document.getElementById('settingsModal');
+
     document.body.classList.toggle('light-mode', themeToggle.checked);
-    document.body.classList.toggle('no-bg', !bgImageToggle.checked); // Disable background if unchecked
+    document.body.classList.toggle('no-bg', !bgImageToggle.checked);
+    settingsModal.classList.toggle('blur', blurToggle.checked);
   };
 
   // Settings Modal Functionality
@@ -36,10 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeSettingsButton = document.getElementById('closeSettings');
   const themeToggle = document.getElementById('themeToggle');
   const bgImageToggle = document.getElementById('bgImageToggle');
+  const blurToggle = document.getElementById('blurToggle');
 
-  // Load the user's theme and background preferences
+  // Load the user's preferences
   themeToggle.checked = getThemePreference();
   bgImageToggle.checked = getBackgroundPreference();
+  blurToggle.checked = getBlurPreference();
   applySettings();
 
   settingsIcon.addEventListener('click', () => {
@@ -60,9 +76,26 @@ document.addEventListener('DOMContentLoaded', () => {
     applySettings();
   });
 
-  // Existing code for card interaction and other features remains unchanged
-  // ... (keep your existing event listeners for details and cards here)
-  
+  blurToggle.addEventListener('change', function() {
+    setBlurPreference(this.checked);
+    applySettings();
+  });
+
+  // Card Hover Effect (JavaScript)
+  document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
+      card.style.transform = 'scale(1.05)';
+      card.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
+      card.style.transform = 'scale(1)';
+      card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+    });
+  });
+
   // Disable right-click
   document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
