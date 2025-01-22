@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   color: #fff;
+  background: url("assets/images/blueprintscroll.png");  
 }
 
 header {
@@ -44,8 +45,9 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   padding: 2rem;
-  max-width: 1200px;
+/*   max-width: 1200px; */
   margin: auto;
+  background: url("assets/images/blueprintscroll.png");  
 }
 
 /* Card Styles */
@@ -72,24 +74,3 @@ header {
 summary {
   font-size: x-large;
 }
-
-/* scrolling background*/
-.container {
-  overflow: hidden;
-}
-
-.infinite-scrolling {
-  background: url("assets/images/blueprintscroll.png") repeat-x;
-  height: 645px;
-  width: 5760px; /* The image width times 3 */
-  animation: slide 60s linear infinite;
-}
-
-@keyframes slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-1920px, 0, 0); /* The image width */
-  }
-} 
