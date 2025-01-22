@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff
+  text-align: center;
+  background: url("assets/images/blueprintscroll.png"); 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #000000; /* Darker background for dark mode */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-bottom: 2px solid #444;
+}
+
+.wiki-logo {
+  max-width: 300px;
+  height: auto;
+}
+
+.settings-icon {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  margin-left: auto; /* Push to the right side */
+}
+
+/* Settings Menu Modal */
+.settings-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: backdrop-filter 0.3s;
+}
+
+.settings-modal.blur {
+  backdrop-filter: blur(5px);
+}
+
+.settings-menu {
+  background-color: #222;
+  color: #fff;
+  padding: 2rem; /* Increase padding to make it bigger */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+  z-index: 100;
+  width: 400px; /* Increase width */
+  max-height: 80vh; /* Ensure it doesn't take up too much vertical space */
+  overflow-y: auto; /* Add scroll if content exceeds max-height */
+}
+
+/* Light mode styles */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000;
+}
+
+body.no-bg {
+  background: none; /* Disable background image */
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  margin: auto;
+}
+
+/* Card Styles */
+.card {
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+summary {
+  font-size: x-large;
+}
+
+ /* Style the button that is used to open and close the collapsible content */
+ .collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
