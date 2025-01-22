@@ -141,7 +141,7 @@ summary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
   background-color: #48494a;
-  color: white;
+  color: #313233;
   cursor: pointer;
   padding: 12px;
   width: 40%;
@@ -155,7 +155,7 @@ summary {
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
-  background-color: #525455;
+  background-color: #4c4e4f;
 }
 
 /* Style the collapsible content. Note: hidden by default */
