@@ -34,8 +34,8 @@ header {
 }
 
 .settings-icon {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
   margin-left: auto; /* Push to the right side */
 }
