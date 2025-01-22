@@ -5,17 +5,18 @@ body {
   padding: 0;
   color: #fff;
   text-align: center;
-  background: url("assets/images/blueprintscroll.png"); 
   transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode {
-  background-color: #000000; /* Darker background for dark mode */
+  background: url("assets/images/BGdark.png");   
+/*background-color: #000000; /* Darker background for dark mode */
   color: #fff; /* Ensure text color is visible in dark mode */
 }
 
 body.light-mode {
-  background-color: #ffffff;
+  background: url("assets/images/BG.png");   
+/*   background-color: #ffffff; */
   color: #000; /* Dark text for light mode */
 }
 
