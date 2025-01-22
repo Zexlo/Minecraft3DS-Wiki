@@ -7,9 +7,14 @@
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-<header>
-  <img src="../assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki Logo" class="wiki-logo">
-</header>
+  <header>
+    <div class="header-content">
+      <a href="../index.html">
+        <img src="../assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki Logo" class="wiki-logo">
+      </a>
+      <img src="../assets/images/gear.png" alt="Settings" class="settings-icon" id="settingsIcon">
+    </div>
+  </header>
   <main>
     <h1>Modding *.bjson Files</h1>
     <p>
@@ -18,8 +23,7 @@
 
     <h2>Manually Editing the File</h2>
     <ul>
-      <li>Before reading this section, please read up about it in <code>&lt;#1235023744280563792&gt;</code>. It has free documentation on the file format itself and how it operates compared to traditional <code>*.json</code> files.</li>
-      <li>You will need a hex editor like <code>ImHex</code> or <code>HxD</code> (my personal favorite).</li>
+      <li>You will need a hex editor like ImHex or HxD (my personal favorite).</li>
       <li>Since there is a lot of stuff to understand and yet to be learned from this format, we highly recommend STBrian/STBUniverse's <a href="https://github.com/STBrian/MC3DS-BJSON-Editor/releases/latest" target="_blank">MC3DS-BJSON-Editor</a>.</li>
     </ul>
 
@@ -31,5 +35,19 @@
       <li>If you're looking to modify geometry, you'll need to look for "Cube, Pivot, and Rotation" objects, and also texture width and heights.</li>
     </ol>
   </main>
+
+  <!-- Settings Menu Modal -->
+  <div class="settings-modal" id="settingsModal">
+    <div class="settings-menu">
+      <h2>Settings</h2>
+      <label>
+        <input type="checkbox" id="themeToggle">
+        Toggle Dark/Light Mode
+      </label>
+      <button id="closeSettings">Close</button>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>
