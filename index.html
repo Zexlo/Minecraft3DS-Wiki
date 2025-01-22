@@ -13,12 +13,18 @@
       <a href="index.html">
         <img src="assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki" class="wiki-logo">
       </a>
+      <img src="assets/images/gear.png" alt="Settings" class="settings-icon" id="settingsIcon">
     </div>
   </header>
+
   <div class="container">
     <div class="infinite-scrolling">
   </div>    
   <main class="grid-container" style="/*! padding-left: 0px; *//*! padding-right: 0px; *//*! padding-top: 0px; *//*! padding-bottom: 0px; *//*! margin-top: 0px; */">
+=======
+  <main class="grid-container">
+    <!-- Card content remains unchanged -->
+
     <a href="sections/custom-skins.html" class="card">
       <h2>Custom Skins</h2>
       <p>How to create custom skins and import them into your game.</p>
@@ -49,7 +55,19 @@
     </a> 
   </div>       
   </main>
+  
+  <!-- Settings Menu Modal -->
+  <div class="settings-modal" id="settingsModal">
+    <div class="settings-menu">
+      <h2>Settings</h2>
+      <label>
+        <input type="checkbox" id="themeToggle">
+        Toggle Dark/Light Mode
+      </label>
+      <button id="closeSettings">Close</button>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
-
