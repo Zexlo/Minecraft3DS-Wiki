@@ -29,7 +29,7 @@ header.dark-mode {
   transition: background-color 0.3s ease; /* Transition for smooth color change */
 }
 
-header.dark-mode {
+header.light-mode {
   display: flex;
   align-items: center;
   background-color: #fff; /* Default dark color */
