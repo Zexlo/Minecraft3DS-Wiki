@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #fff
+  color: #fff; /* Default text color for dark mode */
   text-align: center;
   background: url("assets/images/blueprintscroll.png"); 
   transition: background-color 0.3s, color 0.3s;
@@ -11,12 +11,18 @@ body {
 
 body.dark-mode {
   background-color: #000000; /* Darker background for dark mode */
+  color: #fff; /* Ensure text color is visible in dark mode */
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000; /* Dark text for light mode */
 }
 
 header {
   display: flex;
   align-items: center;
-  background-color: #1e1e1e;
+  background-color: #1e1e1e; /* Default dark color */
   padding: 1rem;
   border-bottom: 2px solid #444;
   transition: background-color 0.3s ease; /* Transition for smooth color change */
@@ -67,12 +73,6 @@ header {
   overflow-y: auto; /* Add scroll if content exceeds max-height */
 }
 
-/* Light mode styles */
-body.light-mode {
-  background-color: #ffffff;
-  color: #000;
-}
-
 body.no-bg {
   background: none; /* Disable background image */
 }
@@ -111,8 +111,8 @@ summary {
   font-size: x-large;
 }
 
- /* Style the button that is used to open and close the collapsible content */
- .collapsible {
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
   background-color: #eee;
   color: #444;
   cursor: pointer;
