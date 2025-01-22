@@ -32,16 +32,29 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('blur', useBlur ? 'true' : 'false');
   };
 
-  // Apply theme and background settings
+  // Function to get white header preference from localStorage
+  const getHeaderPreference = () => {
+    return localStorage.getItem('whiteHeader') === 'true' ? true : false;
+  };
+
+  // Function to set white header preference in localStorage
+  const setHeaderPreference = (useWhiteHeader) => {
+    localStorage.setItem('whiteHeader', useWhiteHeader ? 'true' : 'false');
+  };
+
+  // Apply theme, background, and header settings
   const applySettings = () => {
     const themeToggle = document.getElementById('themeToggle');
     const bgImageToggle = document.getElementById('bgImageToggle');
     const blurToggle = document.getElementById('blurToggle');
+    const whiteHeaderToggle = document.getElementById('whiteHeaderToggle');
     const settingsModal = document.getElementById('settingsModal');
+    const header = document.querySelector('header');
 
     document.body.classList.toggle('light-mode', themeToggle.checked);
     document.body.classList.toggle('no-bg', !bgImageToggle.checked);
     settingsModal.classList.toggle('blur', blurToggle.checked);
+    header.style.backgroundColor = whiteHeaderToggle.checked ? 'white' : ''; // Apply white header if checked
   };
 
   // Settings Modal Functionality
@@ -51,11 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
   const bgImageToggle = document.getElementById('bgImageToggle');
   const blurToggle = document.getElementById('blurToggle');
+  const whiteHeaderToggle = document.getElementById('whiteHeaderToggle');
 
   // Load the user's preferences
   themeToggle.checked = getThemePreference();
   bgImageToggle.checked = getBackgroundPreference();
   blurToggle.checked = getBlurPreference();
+  whiteHeaderToggle.checked = getHeaderPreference();
   applySettings();
 
   settingsIcon.addEventListener('click', () => {
@@ -78,6 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   blurToggle.addEventListener('change', function() {
     setBlurPreference(this.checked);
+    applySettings();
+  });
+
+  whiteHeaderToggle.addEventListener('change', function() {
+    setHeaderPreference(this.checked);
     applySettings();
   });
 
@@ -105,20 +125,18 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('selectstart', function (e) {
     e.preventDefault();
   });
+
+  // Collapsible functionality (moved into the main event listener)
+  var coll = document.getElementsByClassName("collapsible");
+  for (var i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
 });
-
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-}
-
