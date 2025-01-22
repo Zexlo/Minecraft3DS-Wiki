@@ -41,13 +41,20 @@ header.light-mode {
 .wiki-logo {
   max-width: 300px;
   height: auto;
+  margin-left: 600px 
 }
 
 .settings-icon {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  margin-left: auto; /* Push to the right side */
+  margin-left: 550px; /* Push to the right side */
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+
+  /* Safari seems to support, but seems deprecated and does the same thing as the others. */
+  image-rendering: -webkit-optimize-contrast;  
 }
 
 /* Settings Menu Modal */
@@ -94,7 +101,7 @@ header.light-mode {
 
 /* Card Styles */
 .card {
-  background-color: inherit;
+  background-color: #444;
   border: 1px solid #444;
   border-radius: 8px;
   padding: 1rem;
