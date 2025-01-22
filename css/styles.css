@@ -3,9 +3,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: #ffff
   text-align: center;
   background: url("assets/images/blueprintscroll.png"); 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #000000; /* Darker background for dark mode */
 }
 
 header {
@@ -19,22 +24,6 @@ header {
 .wiki-logo {
   max-width: 300px;
   height: auto;
-}
-
-.home-icon img {
-  width: 50px;
-  height: 50px;
-  margin-right: 1rem;
-}
-
-.header-content h1 {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.header-content p {
-  font-size: 1rem;
-  margin: 0.5rem 0 0;
 }
 
 .settings-icon {
@@ -56,18 +45,25 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  transition: backdrop-filter 0.3s;
+}
+
+.settings-modal.blur {
+  backdrop-filter: blur(5px);
 }
 
 .settings-menu {
   background-color: #222;
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 2rem; /* Increase padding to make it bigger */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   text-align: center;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
   z-index: 100;
-  width: 300px;
+  width: 400px; /* Increase width */
+  max-height: 80vh; /* Ensure it doesn't take up too much vertical space */
+  overflow-y: auto; /* Add scroll if content exceeds max-height */
 }
 
 /* Light mode styles */
@@ -87,7 +83,6 @@ body.no-bg {
   gap: 1rem;
   padding: 2rem;
   margin: auto;
-  /* No background set here, use body's background */
 }
 
 /* Card Styles */
