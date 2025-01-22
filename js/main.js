@@ -22,6 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('blur', useBlur ? 'true' : 'false');
   };
 
+  // Apply saved settings on page load
+  const applySavedSettings = () => {
+    const isLight = getThemePreference();
+    const useBlur = getBlurPreference();
+
+    // Apply theme preference
+    document.body.classList.toggle('dark-mode', !isLight);
+
+    // Apply blur preference
+    const settingsModal = document.getElementById('settingsModal');
+    if (settingsModal) {
+      settingsModal.classList.toggle('blur', useBlur);
+    }
+
+    // Update toggles in the UI
+    const themeToggle = document.getElementById('themeToggle');
+    const blurToggle = document.getElementById('blurToggle');
+    if (themeToggle) themeToggle.checked = isLight;
+    if (blurToggle) blurToggle.checked = useBlur;
+  };
 
   // Apply theme, background, and header settings
   const applySettings = () => {
@@ -41,10 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
   const blurToggle = document.getElementById('blurToggle');
 
-  // Load the user's preferences
-  themeToggle.checked = getThemePreference();
-  blurToggle.checked = getBlurPreference();
-  applySettings();
+  // Apply saved settings on page load
+  applySavedSettings();
 
   settingsIcon.addEventListener('click', () => {
     settingsModal.style.display = 'flex'; // Show settings modal
@@ -63,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setBlurPreference(this.checked);
     applySettings();
   });
-
 
   // Card Hover Effect (JavaScript)
   document.querySelectorAll('.card').forEach((card) => {
