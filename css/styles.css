@@ -141,7 +141,7 @@ summary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
   background-color: #48494a;
-  color: #313233;
+  color: rgb(98, 98, 98);
   cursor: pointer;
   padding: 12px;
   width: 40%;
@@ -161,6 +161,7 @@ summary {
 /* Style the collapsible content. Note: hidden by default */
 .content {
   padding: 0px;
+  color: rgb(98, 98, 98);  
   background-color: #313233;
   max-height: 0;
   max-width: 531px;  
