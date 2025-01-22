@@ -11,11 +11,13 @@
   <header>
     <div class="header-content">
       <a href="../index.html">
-        <img src="../assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki" class="wiki-logo">
+        <img align="middle" 
+         src="../assets/images/mc3dsmoddingwiki.png" alt="Minecraft 3DS Wiki" class="wiki-logo">
       </a>
-      <img src="../assets/images/gear.png" alt="Settings" class="settings-icon" id="settingsIcon">
+      <img align="right" 
+      src="../assets/images/gear.png" alt="Settings" class="settings-icon" id="settingsIcon">
     </div>
-</header>  
+</header> 
   <main>
     <h2>Multiple Game Instances</h2>
     <ul>
@@ -71,6 +73,26 @@
       Share your thoughts in the Discord! We're always active and ready to help. Give us some time, and we'll get back to you.
     </p>
   </main>
+ <!-- Settings Menu Modal -->
+ <div class="settings-modal" id="settingsModal">
+  <div class="settings-menu">
+    <h2>Settings</h2>
+    <label>
+      <input type="checkbox" id="themeToggle">
+      Toggle Dark/Light Mode
+    </label>  
+<!--       <label>
+      <input type="checkbox" id="bgImageToggle">
+      Enable Background Image
+    </label> -->
+    <label>
+      <input type="checkbox" id="blurToggle">
+      Enable Background Blur
+    </label>
+    <button id="closeSettings">Close</button>
+  </div>
+</div>
+<script src="../js/main.js"></script> 
 </body>
 </html>
 ```
