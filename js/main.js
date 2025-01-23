@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const blurToggle = document.getElementById('blurToggle');
     if (themeToggle) themeToggle.checked = isLight;
     if (blurToggle) blurToggle.checked = useBlur;
+	applySettings();
   };
 
   // Apply theme, background, and header settings
