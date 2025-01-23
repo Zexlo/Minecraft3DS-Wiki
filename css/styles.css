@@ -110,9 +110,14 @@ zoom: 115%;
   td, th {
     border: 1px solid;
     text-align: center;
-    background-color: #5a5c5d;
+    background-color: #888;
   padding: 6px;
   }
+
+  .grid-container {
+    background-color: inherit; 
+  }
+
   main {
     background-color: #777;
     }     
