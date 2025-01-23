@@ -2,15 +2,44 @@
   overflow: hidden;
 }
 /* General Styles */
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  background-color: inherit;
+  border: 2px transparent; 
+  padding-top: 0.4rem; 
+  padding-left: 3rem;   
+  margin: auto;
+  overflow:hidden;  
+}
+
+/* Card Styles */
+
+.card h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: inherit;
+}
+
 body {
+  
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: #fff;
-  text-align: center;
   background-color: #ffffff;  
   transition: background-color 0.3s, color 0.3s;
   background: url("../assets/images/BGdark.png");
+  background-attachment: fixed;  
   zoom: 115%;   
 
   .card {
@@ -24,17 +53,33 @@ body {
   }  
   .sliding-background {
     z-index: 1;       
-    background: url("../assets/images/headerdark.png") repeat-x;
+    background: url("../assets/images/headerdark.png") repeat;
     height: 90px;
     width: 5076px;
     border-bottom: 3px solid #000;    
     animation: slide 120s linear infinite; /* remove this line to make it static again */
-  }  
-
+  }
+  table {
+    border-collapse: collapse;
+    border-style: ridge;
+    margin-left: 10%;      
+    width: 80%;
+    border-color: #dddddd;    
+  }    
+  td, th {
+    border: 1px solid;
+    text-align: center;
+    background-color: #313233;
+    padding: 6px;     
+  }
+  main {
+    background-color: #222;
+    }   
 }
 
 body.light-mode {
   background: url("../assets/images/BG.png");
+  background-attachment: fixed;    
 zoom: 115%;     
   color: #000; /* Dark text for light mode */
 
@@ -49,12 +94,33 @@ zoom: 115%;
   } 
   .sliding-background {
     z-index: 1;       
-    background: url("../assets/images/header.png") repeat-x;
+    background: url("../assets/images/header.png") repeat;
     height: 90px;
     width: 5076px;
     border-bottom: 3px solid #000;    
     animation: slide 120s linear infinite; /* remove this line to make it static again */
+  }
+  table {
+    border-collapse: collapse;
+    border-style: ridge;
+    margin-left: 10%;      
+    width: 80%;
+    border-color: #101010;    
   }  
+  td, th {
+    border: 1px solid;
+    text-align: center;
+    background-color: #888;
+  padding: 6px;
+  }
+
+  .grid-container {
+    background-color: inherit; 
+  }
+
+  main {
+    background-color: #777;
+    }     
 }
 
 @keyframes slide{
@@ -125,31 +191,6 @@ zoom: 115%;
   overflow-y: auto; /* Add scroll if content exceeds max-height */
 }
 
-/* Grid Layout */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-  padding-top: 0.4rem; 
-  padding-left: 3rem;   
-  margin: auto;
-  overflow:hidden;  
-}
-
-/* Card Styles */
-
-.card h2 {
-  margin: 0 0 0.2rem;
-  font-size: 1.1rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: inherit;
-}
-
 summary {
   font-size: x-large;
 }
@@ -190,3 +231,45 @@ summary {
   transition: max-height 0.2s ease-out;
   margin-bottom: 10px;  
 }
+
+ol {
+  text-align: left;  
+  margin-left:  -2%; 
+  margin-right: 10%;
+}
+
+ul {
+  text-align: left;  
+  margin-left: -2.5%; 
+  margin-right: 10%;
+}
+
+main {
+padding: 8px;
+padding-bottom: 100%;
+border: 2px solid;
+border-color: inherit;
+border-bottom-color: transparent;
+  text-align: left;
+  margin-top:-5px;
+  margin-bottom:-50px;  
+  margin-left: 10%; 
+  margin-right: 10%;
+}
+
+/* #toc_container {
+  display: table;
+  font-size: 95%;
+  margin-bottom: 1em; 
+  padding: 20px;
+  width: auto;
+}
+
+.toc_title {
+  font-weight: 700;
+  text-align: left;
+}
+
+#toc_container li, #toc_container ul, #toc_container ul li{
+  list-style: outside none none !important;
+} */
